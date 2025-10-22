@@ -23,9 +23,10 @@ const SponsorCard = ({ sponsor }: { sponsor: Sponsor | null }) => {
       <Image
         src={sponsor.logoUrl}
         alt={`Logo ${sponsor.name}`}
-        width={512}
-        height={512}
-        className="max-h-12 object-contain grayscale hover:grayscale-0 transition duration-300"
+        width={1024}
+        height={1024}
+        className="object-contain transition duration-300"
+        style={{ maxHeight: '256px' }}
       />
     </a>
   );
@@ -40,7 +41,7 @@ const SponsorTemplate = () => (
 );
 
 const sponsors: (Sponsor | null)[] = [
-  null,
+  {name: "Grupo Ideal", logoUrl: "/logo-ideal.png", websiteUrl: "https://idealgrupo.com.br"},
   null,
   null,
   null,
