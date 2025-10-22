@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import AOS from 'aos'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const hoverEffect: string = "hover:underline"
 const transition: string = "transition-all duration-500 ease-in-out"
