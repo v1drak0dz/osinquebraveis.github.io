@@ -15,7 +15,7 @@ export default function BlogCard({ post }: BlogCardProps) {
 
   return (
     <Link href={`/${slug}`}>
-      <article className="group rounded-2xl border border-gray-200 bg-orange-50 p-6 shadow transition-all duration-200 hover:shadow-lg hover:border-gray-300 md:flex">
+      <article className="mb-6 group rounded-2xl border border-gray-200 bg-orange-50 p-6 shadow transition-all duration-200 hover:shadow-lg hover:border-gray-300 md:flex">
         
         {/* Imagem de capa */}
         {meta.cover && (

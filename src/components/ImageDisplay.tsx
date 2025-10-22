@@ -11,8 +11,8 @@ function slugify(text: string): string {
     .replace(/-+/g, "-"); // remove hífens duplicados
 }
 
-export function ImageDisplay({ title }: { title: string }) {
-  const src = `/blog-imgs/${slugify(title)}.jpg`;
+export function ImageDisplay({ title, source = null }: { title: string, source?: string | null }) {
+  const src = source ? `/blog-imgs/${source}` : `/blog-imgs/${slugify(title)}.jpg`;
 
   return (
     <div className="flex flex-col items-center my-6">
@@ -29,7 +29,7 @@ export function ImageDisplay({ title }: { title: string }) {
           className="object-cover rounded mb-0"
         />
       </div>
-      <p className="text-center text-sm mt-0 text-gray-500 italic">{title}</p>
+      <p style={{ maxWidth: '512px', textAlign: 'center' }} className="text-center text-sm mt-0 text-gray-500 italic">{title}</p>
     </div>
   );
 }

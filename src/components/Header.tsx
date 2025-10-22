@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import AOS from 'aos'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 const hoverEffect: string = "hover:underline"
 const transition: string = "transition-all duration-500 ease-in-out"
@@ -62,7 +63,17 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-orange-600 text-white shadow-md">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-xl font-bold">Os Inquebráveis</div>
+        <div className="text-xl font-bold">
+          <a href="/" className="flex">
+            <Image
+              src="/logo.png"
+              alt="Os Inquebraveis Logo"
+              height={1024}
+              width={1024}
+              style={{ maxWidth: '32px', marginRight: '.25rem' }} />
+            Os Inquebráveis
+          </a>
+        </div>
 
         {/* Botão hamburguer (mobile only) */}
         <button
