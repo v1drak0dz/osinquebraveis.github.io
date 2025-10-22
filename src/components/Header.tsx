@@ -64,7 +64,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="text-xl font-bold">
-          <a href="/" className="flex">
+          <Link href="/" className="flex">
             <Image
               src="/logo.png"
               alt="Os Inquebraveis Logo"
@@ -72,7 +72,7 @@ export default function Header() {
               width={1024}
               style={{ maxWidth: '32px', marginRight: '.25rem' }} />
             Os Inquebráveis
-          </a>
+          </Link>
         </div>
 
         {/* Botão hamburguer (mobile only) */}
