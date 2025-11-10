@@ -7,10 +7,12 @@ type BlogCardProps = {
 
 export default function BlogCard({ post }: BlogCardProps) {
   const { slug, meta } = post;
-  const formattedDate = new Date(meta.date).toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
+  const [ano, mes, dia] = post.meta.date.split("-");
+  const unformattedDate = new Date(Number(ano), Number(mes) - 1, Number(dia))
+  const formattedDate = unformattedDate.toLocaleDateString("pt-BR", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
   });
 
   return (

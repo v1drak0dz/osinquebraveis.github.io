@@ -36,8 +36,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{slug: 
 
   try {
     const post = (await getPostHtml(slug)) as Post;
-    const [ano, mes, dia] = post.meta.date.split("-")
-    const unformattedDate = new Date(Number(ano), Number(mes) -1, Number(dia));
+    const [ano, mes, dia] = post.meta.date.split("-");
+    const unformattedDate = new Date(Number(ano), Number(mes) - 1, Number(dia))
     const formattedDate = unformattedDate.toLocaleDateString("pt-BR", {
       year: "numeric",
       month: "long",

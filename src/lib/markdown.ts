@@ -54,7 +54,6 @@ export function getAllPosts() {
   });
 
   // Ordena por data decrescente
-  console.log(posts)
   return posts.sort((a, b) => {
     const dateA = new Date(a.meta.date || 0).getTime();
     const dateB = new Date(b.meta.date || 0).getTime();
