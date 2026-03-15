@@ -26,11 +26,6 @@ export default function Posts({
             <BlogCard post={post} key={post.slug} />
           ))}
         </div>
-        <Link href="/blog">
-          <div className="text-center py-5 mt-8 w-full bg-orange-50 rounded-lg transition-all duration-500 hover:shadow-lg hover:brightness-90">
-            Ver todos os posts
-          </div>
-        </Link>
         {posts.length > 3 && (
           <Link href="/blog">
             <div className="text-center text-bold py-5 mt-8 w-full bg-orange-50 rounded-lg transition-all duration-500 hover:shadow-lg hover:brightness-90">
