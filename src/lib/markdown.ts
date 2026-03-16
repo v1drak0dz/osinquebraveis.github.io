@@ -46,10 +46,11 @@ export function getPostBySlug(slug: string) {
 export function getAllPosts() {
   const slugs = getPostSlugs();
   const posts = slugs.map((slug) => {
-    const { slug: realSlug, meta } = getPostBySlug(slug);
+    const { slug: realSlug, meta, content } = getPostBySlug(slug);
     return {
       slug: realSlug,
       meta,
+      content
     };
   });
 

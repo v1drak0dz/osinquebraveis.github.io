@@ -7,8 +7,8 @@ import Contact from "@sections/Contact";
 import Posts from "@sections/Posts";
 import SponsorsGrid from "@sections/SponsorsShown";
 
-const EVEN = 'bg-orange-50/50'
-const ODD = 'bg-orange-600/75'
+const EVEN = 'bg-orange-50'
+const ODD = 'bg-orange-600'
 
 export default function Section() {
 
