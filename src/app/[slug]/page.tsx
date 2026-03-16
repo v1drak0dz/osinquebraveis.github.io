@@ -18,10 +18,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   try {
-    const post = (await getPostHtml(params.slug)) as Post;
+    const { slug } = await params;
+    const post = (await getPostHtml(slug)) as Post;
 
     return {
       title: post.meta.title,
@@ -37,19 +38,15 @@ export async function generateMetadata({
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const slug = params.slug;
+  const { slug } = await params;
 
   try {
     const post = (await getPostHtml(slug)) as Post;
 
     const [ano, mes, dia] = post.meta.date.split("-");
-    const unformattedDate = new Date(
-      Number(ano),
-      Number(mes) - 1,
-      Number(dia)
-    );
+    const unformattedDate = new Date(Number(ano), Number(mes) - 1, Number(dia));
 
     const formattedDate = unformattedDate.toLocaleDateString("pt-BR", {
       year: "numeric",
@@ -75,10 +72,7 @@ export default async function BlogPostPage({
           <hr className="mb-6" />
 
           <section className="prose prose-stone prose-p:text-justify prose-ul:leading-2 max-w-none">
-            <MDXRemote
-              source={post.content}
-              components={{ ImageDisplay }}
-            />
+            <MDXRemote source={post.content} components={{ ImageDisplay }} />
           </section>
         </article>
 

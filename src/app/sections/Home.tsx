@@ -30,7 +30,7 @@ export default function HeroSection({ id }: { id: string }) {
   }, []);
 
   return (
-    <section id={id} className="relative min-h-[100dvh] flex items-center">
+    <section id={id} className="relative min-h-dvh flex items-center">
       <div className="fixed inset-0 -z-10">
         <Image
           src={`/${backgrounds[prevIndex]}`}
