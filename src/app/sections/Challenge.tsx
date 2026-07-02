@@ -10,25 +10,26 @@ export default function Challenge({
   return (
     <section
       id={id}
-      className={`min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-8 ${backgroundColor}`}
+      className={`min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 py-12 gap-8 ${backgroundColor}`}
     >
-      {/* Imagem */}
-      <div className="w-full md:w-1/2 flex justify-center" data-aos="fade-left">
+      <div className="w-full lg:w-1/2 flex justify-center" data-aos="fade-left">
         <Image
           src="/challenge.png"
           alt="Imagem de desafio com Concreto"
           width={500}
           height={500}
-          className="max-w-full h-auto"
+          className="max-w-full h-auto rounded-2xl"
         />
       </div>
 
-      {/* Texto */}
-      <div className="w-full md:w-1/2 text-gray-800" data-aos="fade-right">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-orange-50">
+      <div
+        className="w-full lg:w-1/2 flex flex-col md:items-center text-gray-800"
+        data-aos="fade-right"
+      >
+        <h2 className="text-3xl md:text-4xl lg:w-3/4 font-bold text-center mb-6 text-orange-50">
           Nosso Desafio
         </h2>
-        <ul className="space-y-4 text-base md:text-lg leading-relaxed text-orange-50 text-justify">
+        <ul className="space-y-4 text-base lg:text-lg md:w-3/4 leading-relaxed text-orange-50 text-justify">
           <li>
             Participar do <strong>COCAR</strong> representa muito mais do que
             desenvolver um concreto inovador — é encarar uma série de desafios

@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 
 const plans = [
   {
-    title: 'Patrocinio Diamante',
-    price: 'R$ 5.000,00',
+    title: "Patrocinio Diamante",
+    price: "R$ 5.000,00",
     benefits: [
       "Logomarca em destaque em todos os materiais (e-book, camisetas, pôster) durante o congresso IBRACON",
-      "Divulgação da marca nos veículos digitais da equipe (Instagram e site oficial)"
+      "Divulgação da marca nos veículos digitais da equipe (Instagram e site oficial)",
     ],
     color: "bg-sky-400 text-sky-900",
   },
@@ -26,26 +26,27 @@ const plans = [
     price: "R$ 1.000,00",
     benefits: [
       "Logomarca em destaque em todos os materiais (e-book, camisetas - 2º fileira -) durante o congresso IBRACON",
-      "Citação em redes sociais"
+      "Citação em redes sociais",
     ],
     color: "bg-gray-300 text-gray-900",
   },
   {
     title: "Patrocínio Bronze",
     price: "R$ 500,00",
-    benefits: [
-      "Citação coletiva nas redes sociais de agradecimento"
-    ],
+    benefits: ["Citação coletiva nas redes sociais de agradecimento"],
     color: "bg-orange-400 text-orange-900",
   },
 ];
 
-export default function Contact({ id, backgroundColor }: { id: string; backgroundColor: string }) {
+export default function Contact({
+  id,
+  backgroundColor,
+}: {
+  id: string;
+  backgroundColor: string;
+}) {
   return (
-    <section
-      id={id}
-      className={`min-h-screen py-16 px-6 ${backgroundColor}`}
-    >
+    <section id={id} className={`min-h-screen py-16 px-6 ${backgroundColor}`}>
       <h2
         className="text-4xl font-extrabold text-center text-orange-50 mb-12 max-w-3xl mx-auto"
         data-aos="fade-up"
@@ -53,7 +54,7 @@ export default function Contact({ id, backgroundColor }: { id: string; backgroun
         Junte-se a nós e torne possível uma experiência transformadora!
       </h2>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {plans.map(({ title, price, benefits, color }, idx) => (
           <div
             key={title}
@@ -77,7 +78,7 @@ export default function Contact({ id, backgroundColor }: { id: string; backgroun
               A partir de {price}
             </p>
 
-            <ul className="mb-8 space-y-4 text-gray-700 flex-grow list-disc list-inside text-justify">
+            <ul className="mb-8 space-y-4 text-gray-700 grow list-disc list-inside text-justify">
               {benefits.map((benefit, idx) => (
                 <li key={idx} className="text-base leading-relaxed">
                   {benefit}

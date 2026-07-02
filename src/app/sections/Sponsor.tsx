@@ -11,10 +11,12 @@ export default function Sponsor({
   return (
     <section
       id={id}
-      className={`min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-10 header-offset ${backgroundColor}`}
+      className={`min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 py-12 gap-10 header-offset ${backgroundColor}`}
     >
-      {/* Imagem */}
-      <div className="flex justify-center w-full md:w-1/2" data-aos="fade-left">
+      <div
+        className="flex flex-col lg:flex-row items-center lg:justify-center w-full lg:w-1/2"
+        data-aos="fade-left"
+      >
         <Image
           src="/sponsor.png"
           alt="Imagem de Patrocinio"
@@ -24,13 +26,12 @@ export default function Sponsor({
         />
       </div>
 
-      {/* Texto */}
-      <div className="w-full md:w-1/2 text-white" data-aos="fade-right">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-orange-600">
+      <div className="w-full lg:w-1/2 text-white" data-aos="fade-right">
+        <h2 className="text-3xl lg:text-4xl lg:w-3/4 font-bold text-center mb-8 text-orange-600">
           Seja um Patrocinador
         </h2>
 
-        <ul className="space-y-4 text-base md:text-lg leading-relaxed text-justify text-gray-600">
+        <ul className="space-y-4 text-base lg:text-lg md:w-3/4 md:mx-auto lg:mx-0 leading-relaxed text-justify text-gray-600">
           <li>
             Apoiar <strong>Os Inquebráveis</strong> é investir no futuro da
             engenharia brasileira, financiando a construção de conhecimento,
@@ -50,20 +51,16 @@ export default function Sponsor({
           </li>
         </ul>
 
-        {/* <p className="mt-8 text-lg text-center font-semibold">
-          Junte-se a nós e torne possível uma experiência transformadora!
-        </p> */}
-
-        <h3 className="text-center text-xl font-semibold mt-10 mb-4 text-orange-400">
+        <h3 className="text-center text-xl font-semibold lg:w-3/4 mt-10 mb-4 text-orange-400">
           Entre em contato:
         </h3>
 
-        <div className="list-group rounded-lg shadow-lg bg-white text-dark divide-y divide-gray-300 border-1 border-orange-200">
+        <div className="list-group rounded-lg shadow-lg md:w-3/4 md:mx-auto lg:mx-0 bg-white text-dark divide-y divide-gray-300 border border-orange-200">
           <a
             href="https://wa.me/5512996871178"
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-6 py-4 text-green-600 hover:bg-green-600 hover:text-white transition flex items-center gap-3 rounded-t-lg"
+            className="px-6 py-4 text-green-600 hover:bg-green-600 hover:text-white transition flex items-center gap-3 rounded-t-lg"
           >
             <FaWhatsapp size={24} /> (12) 99687-1178
           </a>
@@ -71,7 +68,7 @@ export default function Sponsor({
             href="mailto:os5inquebraveis@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-6 py-4 text-blue-600 hover:bg-blue-600 hover:text-white transition flex items-center gap-3"
+            className="px-6 py-4 text-blue-600 hover:bg-blue-600 hover:text-white transition flex items-center gap-3"
           >
             <FaEnvelope size={24} /> os5inquebraveis@gmail.com
           </a>
@@ -79,7 +76,7 @@ export default function Sponsor({
             href="https://instagram.com/os5inquebraveis"
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-6 py-4 text-pink-600 hover:bg-pink-600 hover:text-white transition flex items-center gap-3 rounded-b-lg"
+            className="px-6 py-4 text-pink-600 hover:bg-pink-600 hover:text-white transition flex items-center gap-3 rounded-b-lg"
           >
             <FaInstagram size={24} /> @os5inquebraveis
           </a>
