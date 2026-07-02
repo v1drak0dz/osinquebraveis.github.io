@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { type Database } from "@interfaces/supabase";
-import { Edit, Trash, Plus, Minus, Home, ArrowLeft } from "lucide-react";
+import { Edit, Trash, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 interface Material {
@@ -68,31 +68,6 @@ export default function MateriaisPage() {
       return;
     }
     setMateriais(materiais.filter((m) => m.id !== id));
-  };
-
-  const alterarQuantidade = async (id: number, delta: number) => {
-    const item = materiais.find((m) => m.id === id);
-    if (!item) return;
-
-    const novaQtd = item.quantidade + delta;
-    if (novaQtd < 0) return;
-
-    const { data, error } = await supabase
-      .from("materiais")
-      .update({ quantidade: novaQtd })
-      .eq("id", id)
-      .select();
-
-    if (error) {
-      console.error(error);
-      return;
-    }
-
-    if (data) {
-      setMateriais(
-        materiais.map((m) => (m.id === id ? (data[0] as Material) : m)),
-      );
-    }
   };
 
   const abrirModalEdicao = (material: Material) => {
